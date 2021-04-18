@@ -5,18 +5,10 @@ Command-line program for converting between US state names and abbreviations, an
 import json  # import json for json processing
 
 def main():
-    with open('data.json', 'r') as file:
-        json_states = file.read()
-        abbreviations_to_names = json.loads(json_states)
+    """ Loads JSON data and prepares dictionaries, loop for  """
     
-    # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states
-    
-    names_to_abbreviations = {}
-    
-    # state key is the key in the state dictionary. state value is the value in the dictionary
-    for abbreviation, name in abbreviations_to_names.items():
-        names_to_abbreviations[name] =  abbreviation
-
+    abbreviations_to_names, names_to_abbreviations = load_state_data('data.json')
+ 
     while True:
         print('1. Convert state to abbreviation')
         print('2. Convert abbreviation to state')
@@ -32,9 +24,25 @@ def main():
         else:
             print('Invalid choice - please try again')
             
-            
+
+def load_state_data(filename):
+    """ Read state names and abbreviations from JSON data file """
+    with open(filename, 'r') as file:
+        json_states = file.read()
+        abbreviations_to_names = json.loads(json_states)
+        
+    # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states
+    
+    names_to_abbreviations = {}
+    
+    # state key is the key in the state dictionary. state value is the value in the dictionary
+    for abbreviation, name in abbreviations_to_names.items():
+        names_to_abbreviations[name] =  abbreviation
+        
+    return abbreviations_to_names, names_to_abbreviations
+
 def convert_state_to_abbreviation(dictionary):
-    """ Convert state to 2-letter abbreviation. 
+    """ Convert state to 2-letter abbreviation.
     Prints 'not found' message if state not found """
     name = input("Enter state name").capitalize()
     abbreviation = dictionary.get(name)
