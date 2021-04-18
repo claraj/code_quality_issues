@@ -11,11 +11,11 @@ def main():
  
     while True:
         print('1. Convert state to abbreviation')
-        print('2. Convert abbreviation to state')
+        print("2. Convert abbreviation to state")
         print('3. Quit')
         choice = input('Enter choice : ')
 
-        if choice == '1':
+        if choice=='1':
             convert_state_to_abbreviation(names_to_abbreviations)
         elif choice == '2':
             convert_abbreviation_to_state(abbreviations_to_names)
@@ -46,7 +46,7 @@ def convert_state_to_abbreviation(dictionary):
     Prints 'not found' message if state not found """
     name = input("Enter state name").capitalize()
     abbreviation = dictionary.get(name)
-    if abbreviation is None:
+    if abbreviation== None:
         print('State not found')
     else:
         print('The abbreviation for ' + name + ' is ' + abbreviation)
