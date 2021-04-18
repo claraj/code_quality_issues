@@ -1,3 +1,7 @@
+"""
+Command-line program for converting between US state names and abbreviations, and vice-versa.
+"""
+
 import json  # import json for json processing
 
 def main():
@@ -30,23 +34,25 @@ def main():
             
             
 def convert_state_to_abbreviation(dictionary):
-    """ Convert state to 2-letter abbreviation. Prints 'not found' message if state not found """
+    """ Convert state to 2-letter abbreviation. 
+    Prints 'not found' message if state not found """
     name = input("Enter state name").capitalize()
     abbreviation = dictionary.get(name)
     if abbreviation is None:
         print('State not found')
     else:
-        print("The abbreviation for " + userInput + " is " + result)
+        print('The abbreviation for ' + userInput + ' is ' + abbreviation)
         
         
 def convert_abbreviation_to_state(dictionary):
-    """ Convert abbreviation to full state name. Prints 'not found' message if abbreviation not found """
+    """ Convert abbreviation to full state name. 
+    Prints 'not found' message if abbreviation not found """
     abbreviation = input("Enter abbreviation name").upper()
     name = dictionary.get(abbreviation)
     if name is None:
         print('Abreviation not found')
     else:
-        print("the state with the abbreviation " + abbreviation + " is " + name)
+        print('the state with the abbreviation ' + abbreviation + ' is ' + name)
 
 
 if __name__ == "__main__":
