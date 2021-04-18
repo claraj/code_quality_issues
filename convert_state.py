@@ -5,7 +5,7 @@ import json  # import json for json processing
 def main():
     with open('data.json','r') as file:
         data = file.read()
-        data = json.loads(data)
+        data = json.loads(data) # comment
 
     print(data)
     
@@ -14,7 +14,7 @@ def main():
     stateAbbr2 = {}# dictionary of state name keys and state abbreviation values
     # state key is the key in the state dictionary. state value is the value in the dictionary 
     for statekey, statevalue in stateAbbr.items() :
-        stateAbbr2[statevalue] =  statekey
+        stateAbbr2[statevalue] =  statekey# fdfgdgfd
 
 
 
@@ -25,7 +25,7 @@ def main():
         print(' 3. quit')
         choice =   input("Enter choice : ")
 
-        if choice=="1":
+        if choice=="1": ##SDFSDDFSDF
 
             convertStateToAbbreviation(stateAbbr2)
         elif  choice == "2":
