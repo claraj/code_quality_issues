@@ -1,5 +1,6 @@
-import json  # import json for json processing
 """Convert between state name and abbreviation"""
+import json  # import json for json processing
+
 
 def main():
 
@@ -54,6 +55,4 @@ def convert_abbreviation_to_state(dictionary):
         print("The state with the abbreviation." + user_input + " is " + result)
 
 if __name__ == "__main__":
-    """Calls main funciton"""
     main()
-    
