@@ -22,12 +22,9 @@ def main():
         choice =   input("Enter choice : ")
 
         if choice == "1":
-
             convertStateToAbbreviation(stateAbbr2)
         elif  choice == "2":
             convert_abbreviation_to_state(stateAbbr)
-        
-        
         elif choice == "3":
             break
         else:
