@@ -1,11 +1,15 @@
-import json  # import json for json processing
+import json 
 
 
 
 def main():
     states_file = "states.json"
-    abrvs_to_states = read_file(states_file) # dictionary of state codes with corresponding state names
-    states_to_abrvs = reverse_dict(abrvs_to_states)  # dictionary of states with corresponding state codes
+
+    # dictionary of state codes with corresponding state names
+    abrvs_to_states = read_file(states_file)
+
+    # dictionary of states with corresponding state codes
+    states_to_abrvs = reverse_dict(abrvs_to_states)  
 
     while True:
 
