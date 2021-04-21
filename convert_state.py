@@ -1,7 +1,6 @@
-
-
-
 import json  # import json for json processing
+
+
 def main():
     with open('data.json','r') as file:
         data = file.read()
