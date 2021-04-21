@@ -4,6 +4,8 @@ import json
 
 
 def main():
+    """Reading in json data"""
+
     with open('data.json', 'r') as file:
         state_json = file.read()
         abbr_to_names = json.loads(state_json)
