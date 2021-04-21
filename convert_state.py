@@ -52,9 +52,5 @@ def convert_abbreviation_to_state(dictionary):
         print("the state with the abbreviation   " + userInput + " is " + result)
 
 
-
-
-
 if __name__ == "__main__":
-
     main()
