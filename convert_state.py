@@ -3,12 +3,12 @@ import json  # import json for json processing
 
 def main():
     with open('data.json','r') as file:
-        data = file.read()
-        data = json.loads(data)
-    print(data)
+        abbreviation_json = file.read()
+        abbreviation_dict = json.loads(abbreviation_json)
+    print(abbreviation_dict)
     
     # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
-    stateAbbr = data #dictionary of state abbreviations keys and state name values 
+    stateAbbr = abbreviation_dict #dictionary of state abbreviations keys and state name values 
     stateAbbr2 = {}# dictionary of state name keys and state abbreviation values
     # state key is the key in the state dictionary. state value is the value in the dictionary 
     for statekey, statevalue in stateAbbr.items() :
