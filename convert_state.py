@@ -21,14 +21,14 @@ def main():
         print(' 3. quit')
         choice =   input("Enter choice : ")
 
-        if choice=="1":
+        if choice == "1":
 
             convertStateToAbbreviation(stateAbbr2)
         elif  choice == "2":
             convert_abbreviation_to_state(stateAbbr)
         
         
-        elif choice== "3":
+        elif choice == "3":
             break
         else:
             print('try again')
