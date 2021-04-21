@@ -1,7 +1,10 @@
+module.string
 import json  # import json for json processing
 
 
 def main():
+    """ This command Converts states to abbreviations and vice versa 
+    """ 
     with open('data.json','r') as file:
         state_json= file.read()
         abbr_to_names = json.loads(state_json)
@@ -55,5 +58,4 @@ def convert_abbreviation_to_state(dictionary):
 
 
 if __name__ == '__main__':
-
     main()
