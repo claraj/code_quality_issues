@@ -6,7 +6,10 @@ import json
 
 
 def main():
-    # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
+    """
+    Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states
+    Allow user to get conversions from dicts
+    """
     with open('data.json','r') as file:
         abbreviation_json = file.read()
         state_abbreviations = json.loads(abbreviation_json)
@@ -33,6 +36,7 @@ def main():
 
 
 def convert_state_to_abbreviation(dictionary):
+    """Convert user selected state to abbreviation"""
     selection = input('Enter state name').capitalize()
     result = dictionary.get(selection)
     if result is None:
@@ -42,6 +46,7 @@ def convert_state_to_abbreviation(dictionary):
 
 
 def convert_abbreviation_to_state(dictionary):
+    """Convert user selected abbreviation to state"""
     selection = input('Enter abbrviation name').upper()
     result = dictionary.get(selection)
     if result is None:
