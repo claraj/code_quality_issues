@@ -21,11 +21,11 @@ def main():
         print('3. Quit')
         choice = input('Enter choice: ')
 
-        if choice == "1":
+        if choice == '1':
             convert_state_to_abbreviation(state_names_to_abbr)
-        elif choice == "2":
+        elif choice == '2':
             convert_abbreviation_to_state(state_abbr_to_names_dict)
-        elif choice == "3":
+        elif choice == '3':
             break
         else:
             print('Try again.')
@@ -49,5 +49,5 @@ def convert_abbreviation_to_state(state_abbr_to_names_dict):
         print(f'The state with the abbreviation {user_input} is {result}.')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
