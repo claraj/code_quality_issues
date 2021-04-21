@@ -10,7 +10,7 @@ def main():
     # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
     state_names = {}# dictionary of state name keys and state abbreviation values
     # state key is the key in the state dictionary. state value is the value in the dictionary 
-    for statekey, statevalue in stateAbbr.items() :
+    for statekey, statevalue in state_abbreviations.items() :
         state_names[statevalue] =  statekey
 
     while True:
@@ -19,9 +19,9 @@ def main():
         print(' 3. quit')
         choice =   input("Enter choice : ")
         if choice == "1":
-            convertStateToAbbreviation(stateAbbr2)
+            convertStateToAbbreviation(state_names)
         elif  choice == "2":
-            convert_abbreviation_to_state(stateAbbr)
+            convert_abbreviation_to_state(state_abbreviations)
         elif choice == "3":
             break
         else:
