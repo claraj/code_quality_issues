@@ -12,7 +12,6 @@ def main():
     with open('data.json', 'r') as file:
         state_names = file.read()
         state_names = json.loads(state_names)
-    print(state_names)
 
     # create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states
     state_abbr_to_names_dict = state_names
