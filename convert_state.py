@@ -11,9 +11,9 @@ def main():
     state_abbr_to_names_dict = state_names  # dictionary of state abbreviations keys and state name values
     state_names_to_abbr = {}  # dictionary of state name keys and state abbreviation values
 
-    # state key is the key in the state dictionary. state value is the value in the dictionary
-    for statekey, statevalue in state_abbr_to_names_dict.items() :
-        state_names_to_abbr[statevalue] =  statekey
+    # state key is the key in the state dictionary. State value is the value in the dictionary
+    for state_key, state_value in state_abbr_to_names_dict.items():
+        state_names_to_abbr[state_value] = state_key
 
     while True:
         print('1. Convert state to abbreviation')
