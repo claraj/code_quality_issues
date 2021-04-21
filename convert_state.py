@@ -1,7 +1,11 @@
 import json  # import json for json processing
 
-# main function
+
+
 def main():
+    """
+    Main function creates dictionary of states and runs menu
+    """
     with open('data.json','r') as file:
         state_data = file.read()
         state_data = json.loads(state_data)
@@ -35,7 +39,10 @@ def main():
             print('Try again.')
 
 
-# Convert state to abbreviation
+"""
+Convert state to abbreviation
+"""
+
 def convert_state_to_abbreviation(dictionary):
     user_input = input('Enter state name ').capitalize()   # User inputs state name
     result = dictionary.get(user_input)
