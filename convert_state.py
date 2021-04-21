@@ -19,7 +19,7 @@ def main():
         print('3. Quit')
         choice =   input('Enter choice: ')
         if choice == '1':
-            convertStateToAbbreviation(state_names)
+            convert_state_to_abbreviation(state_names)
         elif  choice == '2':
             convert_abbreviation_to_state(state_abbreviations)
         elif choice == '3':
@@ -28,7 +28,7 @@ def main():
             print('Try again')
 
 
-def convertStateToAbbreviation(dictionary ):
+def convert_state_to_abbreviation(dictionary ):
     userInput = input('Enter state name').capitalize()
     result = dictionary.get(userInput  )
     if result == None:
