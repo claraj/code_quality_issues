@@ -1,4 +1,6 @@
-import json  # import json for json processing
+"""Program that converts state names to abbreviations and vice versa"""
+
+import json
 
 
 def main():
