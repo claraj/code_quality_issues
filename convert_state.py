@@ -1,4 +1,5 @@
-import json  # import json for json processing
+import json
+
 def main():
     with open('state_data.json','r') as file:
         state_data = file.read()
@@ -14,9 +15,6 @@ def main():
     for statekey, statevalue in state_abbr_to_longform.items() :
         state_longform_to_abbr[statevalue] = statekey
 
-
-
-    #loop
     while True:
         print('1. Convert state to abbreviation ')
         print('2. Convery abreviasion to state ')
@@ -50,9 +48,6 @@ def convert_abbreviation_to_state(dictionary):
         print('abreviation not found')
     else:
         print("the state with the abbreviation " + user_input + " is " + result)
-
-
-
 
 
 if __name__ == "__main__":
