@@ -1,10 +1,14 @@
 import json
 
-
 """
 Command line program to convert state names to abbreviations or convert abbreviations to names
 """
+
+
 def main():
+    """
+    Read in JSON data and loop over
+    """
     with open('data.json', 'r') as file:
         state_names = file.read()
         state_names = json.loads(state_names)
@@ -34,10 +38,10 @@ def main():
             print('Try again.')
 
 
-"""
-Take state name input and convert to its abbreviation
-"""
 def convert_state_to_abbreviation(state_names_to_abbr):
+    """
+    Take state name input and convert to its abbreviation
+    """
     user_input = input('Enter state name: ').title()
     result = state_names_to_abbr.get(user_input)
     if result is None:
@@ -45,10 +49,11 @@ def convert_state_to_abbreviation(state_names_to_abbr):
     else:
         print(f'The abbreviation for {user_input} is {result}.')
 
-"""
-Take state abbreviation input and convert to its name
-"""
+
 def convert_abbreviation_to_state(state_abbr_to_names_dict):
+    """
+    Take state abbreviation input and convert to its name
+    """
     user_input = input('Enter abbreviation name: ').upper()
     result = state_abbr_to_names_dict.get(user_input)
     if result is None:
