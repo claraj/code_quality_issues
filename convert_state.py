@@ -28,14 +28,14 @@ def main():
             convert_abbreviation_to_state(stateAbbr)
         
         
-        elif choice==  "3":
+        elif choice== "3":
             break
         else:
             print('try again')
 
 
 def convertStateToAbbreviation(dictionary ):
-    userInput   = input("Enter state name").  capitalize()
+    userInput = input("Enter state name").  capitalize()
     result = dictionary.get(userInput  )
     if result == None:
         print(' state not found')
@@ -44,7 +44,7 @@ def convertStateToAbbreviation(dictionary ):
 
 
 def convert_abbreviation_to_state(dictionary):
-    userInput   = input("Enter abbrviation name").upper()
+    userInput = input("Enter abbrviation name").upper()
     result = dictionary.get(userInput)
     if result == None:
         print(' abreviation not found')
