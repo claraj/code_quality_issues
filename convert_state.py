@@ -26,12 +26,10 @@ def main():
         if choice == "1":
 
             convert_state_to_abvr(states_to_abrvs)
-            continue
 
         elif  choice == "2":
 
             convert_abvr_to_state(abrvs_to_states)
-            continue
         
         elif choice==  "3":
 
