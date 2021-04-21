@@ -12,8 +12,8 @@ def main():
         state_abbreviations = json.loads(abbreviation_json)
     print(state_abbreviations)
     
+    # Name is key in name dict, value in abbreviation dict. Abbreviation is key in abbreviation dict, value in state dict.
     state_names = {}
-    # State key is the key in the state dictionary. State value is the value in the dictionary.
     for abbreviation, name in state_abbreviations.items():
         state_names[name] = abbreviation
 
