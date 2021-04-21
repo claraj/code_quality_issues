@@ -6,19 +6,8 @@ import json
 
 
 def main():
-    """
-    Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states
-    Allow user to get conversions from dicts
-    """
-    with open('data.json','r') as file:
-        abbreviation_json = file.read()
-        state_abbreviations = json.loads(abbreviation_json)
-    print(state_abbreviations)
-    
-    # Name is key in name dict, value in abbreviation dict. Abbreviation is key in abbreviation dict, value in state dict.
-    state_names = {}
-    for abbreviation, name in state_abbreviations.items():
-        state_names[name] = abbreviation
+    """Allow user to get conversions from dicts"""
+    state_abbreviations, state_names = get_names_and_abbreviations()
 
     while True:
         print('1. Convert state to abbreviation')
@@ -33,6 +22,22 @@ def main():
             break
         else:
             print('Try again')
+
+
+def get_names_and_abbreviations():
+    """
+    Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states
+    """
+    with open('data.json','r') as file:
+        abbreviation_json = file.read()
+        state_abbreviations = json.loads(abbreviation_json)
+    print(state_abbreviations)
+    
+    # Name is key in name dict, value in abbreviation dict. 
+    # Abbreviation is key in abbreviation dict, value in state dict.
+    state_names = {}
+    for abbreviation, name in state_abbreviations.items():
+        state_names[name] = abbreviation
 
 
 def convert_state_to_abbreviation(dictionary):
