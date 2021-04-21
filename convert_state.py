@@ -29,7 +29,7 @@ def main():
 
 
 def convertStateToAbbreviation(dictionary ):
-    userInput = input('Enter state name').  capitalize()
+    userInput = input('Enter state name').capitalize()
     result = dictionary.get(userInput  )
     if result == None:
         print('State not found')
