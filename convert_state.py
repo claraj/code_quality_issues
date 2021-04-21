@@ -18,7 +18,7 @@ def main():
         print('1. Convert state to abbreviation')
         print('2. Convery abreviasion to state')
         print('3. quit')
-        choice =   input('Enter choice:')
+        choice= input('Enter choice:')
 
         if choice=='1':
             convertStateToAbbreviation(stateAbbr2)
