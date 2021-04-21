@@ -12,15 +12,14 @@ def main():
     with open('data.json','r') as file:
         states = file.read()
         states = json.loads(states)
-    print(states)
 
     # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
     state_abbr = states    #dictionary of state abbreviations keys and state name values 
     state = {}     # dictionary of state name keys and state abbreviation values
     
     # state key is the key in the state dictionary. state value is the value in the dictionary 
-    for statekey, statevalue in stateAbbr.items():
-        state[statevalue] = statekey
+    for state_key, state_value in stateAbbr.items():
+        state[state_value] = state_key
 
     while True:
         print('1. Convert state to abbreviation')
@@ -33,7 +32,7 @@ def main():
             convert_state_to_abbreviation(state)
 
         elif  choice=='2':
-            convert_abbreviation_to_state(stateAbbr)
+            convert_abbreviation_to_state(state_abbr)
          
         elif choice=='3':
             break
