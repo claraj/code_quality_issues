@@ -1,8 +1,8 @@
-import json
-
 """
 Command line program to convert state names to abbreviations or convert abbreviations to names
 """
+
+import json
 
 
 def main():
