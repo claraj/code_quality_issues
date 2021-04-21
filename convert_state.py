@@ -1,9 +1,9 @@
-module.string
 import json  # import json for json processing
+module.string
 
 
 def main():
-    """ This command Converts states to abbreviations and vice versa 
+    """ This command converts states to abbreviations and vice versa 
     """ 
     with open('data.json','r') as file:
         state_json= file.read()
@@ -13,10 +13,10 @@ def main():
     # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
     state_abbr = abbr_to_names #dictionary of state abbreviations keys and state name values 
     state_dictionary = {}# dictionary of state name keys and state abbreviation values
-    # state key is the key in the state dictionary. state value is the value in the dictionary 
+     
     
-    for statekey, statevalue in state_abbr.items() :
-        state_dictionary[statevalue] =  statekey
+    for state_key, state_value in state_abbr.items() :
+        state_dictionary[statevalue] =  state_key
 
     #loop
     while True:
@@ -40,7 +40,7 @@ def main():
 
 
 def convert_state_to_abbreviation(dictionary ):
-    user_input = input('Enter state name').  capitalize()
+    user_input = input('Enter state name').capitalize()
     result = dictionary.get(user_input)
     if result == None:
         print('State not found')
