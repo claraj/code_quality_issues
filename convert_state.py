@@ -3,30 +3,23 @@ import json  # import json for json processing
 
 
 def main():
-    with open("states.json","r") as file:
-        states = file.read()
-        abrvs_to_states = json.loads(states) # dictionary of state codes with corresponding state names
-
-    states_to_abrvs = {}  # dictionary of states with corresponding state codes
-  
-    for key, value in abrvs_to_states.items() :
-        states_to_abrvs[value] =  key
-
+    states_file = "states.json"
+    abrvs_to_states = read_file(states_file) # dictionary of state codes with corresponding state names
+    states_to_abrvs = reverse_dict(abrvs_to_states)  # dictionary of states with corresponding state codes
 
     while True:
-        print("1. Convert state to abbreviation")
-        print("2. Convery abbreviation to state")
-        print("3. Quit")
 
-        choice =   input("Enter the integer value of your choice: ")
+        choice = show_menu_get_choice()
 
         if choice == "1":
 
             convert_state_to_abvr(states_to_abrvs)
+            continue
 
         elif  choice == "2":
 
             convert_abvr_to_state(abrvs_to_states)
+            continue
         
         elif choice==  "3":
 
@@ -36,15 +29,15 @@ def main():
         else:
 
             print('Invalid entry.')
-
+  
 
 def convert_state_to_abvr(states):
-    userInput   = input("Enter state name").  capitalize()
-    result = states.get(userInput  )
-    if result == None:
-        print(' state not found')
+    state = input("Enter state name: ").capitalize()
+    abrv_name = states.get(state)
+    if abrv_name:
+        print (f"The abbreviation for {state} is {abrv_name}")
     else:
-        print ( "The abbreviation for " +  userInput+" is " + result)
+        print("State not found.")
 
 
 def convert_abvr_to_state(state_abvrs):
@@ -56,7 +49,33 @@ def convert_abvr_to_state(state_abvrs):
         print('Abbreviation not found.')
         
 
+def read_file(states_file):
+    with open(states_file,"r") as file:
+        states = file.read()
+        abrvs_to_states = json.loads(states) 
+    return abrvs_to_states
 
+
+def reverse_dict(initial_dict):
+    reversed_dict = {}
+
+    for key, value in initial_dict.items() :
+        reversed_dict[value] =  key
+    
+    return reversed_dict
+
+
+def show_menu_get_choice():
+    print("1. Convert state to abbreviation")
+    print("2. Convery abbreviation to state")
+    print("3. Quit")
+
+    choice =   input("Enter the integer value of your choice: ")
+
+    return choice
+
+
+        
 if __name__ == "__main__":
 
     main()
