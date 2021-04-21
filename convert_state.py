@@ -1,8 +1,16 @@
+"""
+Application to convert state names to their state codes
+and state codes to their corresponding state names
+"""
 import json 
 
 
-
 def main():
+    """ 
+    Allows the user to choose whether they'd like
+    to convert a state to state code, state code to state,
+    or quit.
+    """
     states_file = "states.json"
 
     # dictionary of state codes with corresponding state names
