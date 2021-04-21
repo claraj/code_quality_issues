@@ -1,22 +1,21 @@
+"""
+Command line program for converting states to abbreviations
+and abbreviations to states
+"""
 
+import json 
 
-
-import json  # import json for json processing
 def main():
     with open('data.json','r') as file:
-        data = file.read()
-        data = json.loads(data)
+        state_json = file.read()
+        abbr_to_names = json.loads(state_json)
 
-    print(data)
-    
     # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
-    stateAbbr = data #dictionary of state abbreviations keys and state name values 
-    stateAbbr2 = {}# dictionary of state name keys and state abbreviation values
+    # stateAbbr = data # dictionary of state abbreviations keys and state name values 
+    stateAbbr2 = {} # dictionary of state name keys and state abbreviation values
     # state key is the key in the state dictionary. state value is the value in the dictionary 
-    for statekey, statevalue in stateAbbr.items() :
+    for statekey, statevalue in abbr_to_names.items() :
         stateAbbr2[statevalue] =  statekey
-
-
 
     #loop
     while True:
