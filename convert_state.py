@@ -7,7 +7,7 @@ import json
 
 def main():
     """Allow user to get conversions from dicts"""
-    state_abbreviations, state_names = get_names_and_abbreviations()
+    state_names, state_abbreviations = get_names_and_abbreviations()
 
     while True:
         print('1. Convert state to abbreviation')
@@ -38,6 +38,8 @@ def get_names_and_abbreviations():
     state_names = {}
     for abbreviation, name in state_abbreviations.items():
         state_names[name] = abbreviation
+
+    return state_names, state_abbreviations
 
 
 def convert_state_to_abbreviation(dictionary):
