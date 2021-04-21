@@ -6,13 +6,16 @@ import json
 
 
 def main():
+    '''
+    reads the states js and stores them as dictionary
+    '''
     with open('data.json','r') as file:
         states = file.read()
         states = json.loads(states)
     print(states)
 
     # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
-    stateAbbr = states    #dictionary of state abbreviations keys and state name values 
+    state_abbr = states    #dictionary of state abbreviations keys and state name values 
     state = {}     # dictionary of state name keys and state abbreviation values
     
     # state key is the key in the state dictionary. state value is the value in the dictionary 
@@ -40,10 +43,13 @@ def main():
 
 
 def convert_state_to_abbreviation(dictionary):
+    '''
+    converts state name to abbreviation
+    '''
     user_input=input("Enter state name: ").capitalize()
     result = dictionary.get(user_input)
 
-    if result==None:
+    if result is None:
         print('state not found')
 
     else:
@@ -51,10 +57,13 @@ def convert_state_to_abbreviation(dictionary):
 
 
 def convert_abbreviation_to_state(dictionary):
-    user_input = input("Enter abbrviation name: ").upper()
+    '''
+    converts abbreviation to state name
+    '''
+    user_input = input("Enter abbreviation name: ").upper()
     result = dictionary.get(user_input)
 
-    if result==None:
+    if result is None:
         print('abbreviation not found')
 
     else:
@@ -62,5 +71,4 @@ def convert_abbreviation_to_state(dictionary):
 
 
 if __name__ == "__main__":
-
     main()
