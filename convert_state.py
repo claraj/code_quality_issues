@@ -1,11 +1,10 @@
+"""Convert between state name and abbreviation"""
 import json  # import json for json processing
 
 
 
 def main():
-    """
-    Main function creates dictionary of states and runs menu
-    """
+    """ Main function creates dictionary of states and runs menu """
     with open('data.json','r') as file:
         state_data = file.read()
         state_data = json.loads(state_data)
@@ -39,11 +38,10 @@ def main():
             print('Try again.')
 
 
-"""
-Convert state to abbreviation
-"""
-
 def convert_state_to_abbreviation(dictionary):
+    """
+    Convert state to abbreviation
+    """
     user_input = input('Enter state name ').capitalize()   # User inputs state name
     result = dictionary.get(user_input)
 
@@ -54,8 +52,8 @@ def convert_state_to_abbreviation(dictionary):
         print('The abbreviation for ' +  user_input + ' is ' + result)
 
 
-# Convert abbreviation to state
 def convert_abbreviation_to_state(dictionary):
+    """Convert abbreviation to state"""
     user_input = input('Enter abbreviation name').upper() # User inputs abbreviation
     result = dictionary.get(user_input)
 
