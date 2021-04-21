@@ -1,4 +1,4 @@
-import json  # import json for json processing
+import json
 
 
 def main():
