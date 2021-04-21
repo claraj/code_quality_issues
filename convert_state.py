@@ -1,5 +1,5 @@
 import json  # import json for json processing
-module.string
+
 
 
 def main():
@@ -10,15 +10,15 @@ def main():
         abbr_to_names = json.loads(state_json)
 
     
-    # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
-    state_abbr = abbr_to_names #dictionary of state abbreviations keys and state name values 
-    state_dictionary = {}# dictionary of state name keys and state abbreviation values
-     
-    
-    for state_key, state_value in state_abbr.items() :
-        state_dictionary[statevalue] =  state_key
+    # Create a dictionary of states (abbreviations, and a dictionary of abbreviations)
+    state_abbr = abbr_to_names  
+    state_dictionary = {}
 
-    #loop
+    for state_key, state_value in state_abbr.items() :
+        state_dictionary[state_value] =  state_key
+      
+    #loop tht displays menu everytime 
+    
     while True:
         print('1. Convert state to abbreviation')
         print('2. Convert abbreviation to state')
@@ -51,6 +51,7 @@ def convert_state_to_abbreviation(dictionary ):
 def convert_abbreviation_to_state(dictionary):
     user_input = input('Enter abbreviation name').upper()
     result = dictionary.get(user_input)
+    
     if result == None:
         print('Abbreviation not found')
     else:
