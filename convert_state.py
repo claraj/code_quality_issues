@@ -9,22 +9,20 @@ def main():
     # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
     stateKeyandName = stateData 
     stateKeyandAbbrev = {}
-    # state key is the key in the state dictionary. state value is the value in the dictionary 
+
     for statekey, statevalue in stateKeyandName.items() :
         stateKeyandAbbrev[statevalue] =  statekey
 
     while True:
         print('1. Convert state to abbreviation')
-        print("2. Convery abbreviation to state")
-        print('3. quit')
+        print("2. Convert abbreviation to state")
+        print('3. Quit')
         choice =   input("Enter choice : ")
 
         if choice=="1":
-
             convert_state_to_abbreviation(stateKeyandAbbrev)
         elif  choice=="2":
             convert_abbreviation_to_state(stateKeyandName)
-        
         elif choice=="3":
             break
         else:
@@ -43,7 +41,6 @@ def convert_abbreviation_to_state(dictionary):
 
     userInput = input("Enter abbrviation name.").upper()
     result = dictionary.get(userInput)
-
     if result == None:
         print('Abreviation not found.')
     else:
