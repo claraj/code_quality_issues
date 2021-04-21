@@ -15,8 +15,6 @@ def main():
     for statekey, statevalue in stateAbbr.items() :
         stateAbbr2[statevalue] =  statekey
 
-
-
     #loop
     while True:
         print('1. Convert state to abbreviation')
