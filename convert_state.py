@@ -42,6 +42,10 @@ def main():
   
 
 def convert_state_to_abvr(states):
+    """
+    Takes a state name and converts it to a state code
+
+    """
     state = input("Enter state name: ").capitalize()
     abrv_name = states.get(state)
     if abrv_name:
@@ -51,6 +55,10 @@ def convert_state_to_abvr(states):
 
 
 def convert_abvr_to_state(state_abvrs):
+    """
+    Takes a state code and converts it to a state name
+
+    """
     abvr_name   = input("Enter abbreviation name: ").upper()
     state = state_abvrs.get(abvr_name)
     if state:
@@ -60,6 +68,10 @@ def convert_abvr_to_state(state_abvrs):
         
 
 def read_file(states_file):
+    """
+    Reads a json file a returns a python dictionary
+
+    """
     with open(states_file,"r") as file:
         states = file.read()
         abrvs_to_states = json.loads(states) 
@@ -67,6 +79,10 @@ def read_file(states_file):
 
 
 def reverse_dict(initial_dict):
+    """
+    Takes a dictionary and switches the key and value positions
+
+    """
     reversed_dict = {}
 
     for key, value in initial_dict.items() :
@@ -76,6 +92,10 @@ def reverse_dict(initial_dict):
 
 
 def show_menu_get_choice():
+    """
+    Displays the menu options and returns the user's choice
+
+    """
     print("1. Convert state to abbreviation")
     print("2. Convery abbreviation to state")
     print("3. Quit")
