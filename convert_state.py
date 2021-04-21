@@ -1,7 +1,14 @@
+"""
+    This program converts between US state names, and abbreviations. 
+    For example, converting "MN" to "Minnesota" 
+    or converting "California" to "CA".
+"""
 import json
 
 def main():
-
+    """
+    Read data from JSON file to start main method
+    """
     with open('data.json','r') as file:
         data = file.read()
         data = json.loads(data)
@@ -30,18 +37,25 @@ def main():
 
 
 def convert_state_to_abbreviation(dictionary):
+    """
+    Converts user input for full state name into state abbrevation
+    """
     user_input = input('Enter state name: ').capitalize()
     result = dictionary.get(user_input)
-    if result == None:
+    if result is None:
         print('state not found.')
     else:
         print ( 'The abbreviation for ' +  user_input + 'is' + result)
 
 
 def convert_abbreviation_to_state(dictionary):
+    """
+    Converts user input for abbrevation into full state name 
+    """
     user_input = input('Enter abbreviation name: ').upper()
     result = dictionary.get(user_input)
-    if result == None:
+
+    if result is None:
         print('abbreviation not found.')
     else:
         print('The state with the abbreviation ' + user_input + 'is' + result)
