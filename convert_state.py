@@ -1,5 +1,8 @@
-import json  # import json for json processing
+import json
 
+"""
+Command line program to convert state names to abbreviations or convert abbreviations to names
+"""
 
 def main():
     with open('data.json', 'r') as file:
