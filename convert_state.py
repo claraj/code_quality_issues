@@ -5,7 +5,6 @@ def main():
     with open('data.json','r') as file:
         data = file.read()
         data = json.loads(data)
-
     print(data)
     
     # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
@@ -20,7 +19,6 @@ def main():
         print("2. Convery abreviasion to state")
         print(' 3. quit')
         choice =   input("Enter choice : ")
-
         if choice == "1":
             convertStateToAbbreviation(stateAbbr2)
         elif  choice == "2":
