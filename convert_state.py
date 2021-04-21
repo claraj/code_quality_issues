@@ -34,7 +34,7 @@ def convertStateToAbbreviation(dictionary ):
     if result == None:
         print('State not found')
     else:
-        print ('The abbreviation for ' + userInput + ' is ' + result)
+        print (f'The abbreviation for {userInput} is {result}')
 
 
 def convert_abbreviation_to_state(dictionary):
@@ -43,7 +43,7 @@ def convert_abbreviation_to_state(dictionary):
     if result == None:
         print('Abreviation not found')
     else:
-        print('The state with the abbreviation ' + userInput + ' is ' + result)
+        print(f'The state with the abbreviation {userInput} is {result}')
 
 
 if __name__ == "__main__":
