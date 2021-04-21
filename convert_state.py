@@ -28,7 +28,7 @@ def main():
             print('Try again')
 
 
-def convert_state_to_abbreviation(dictionary ):
+def convert_state_to_abbreviation(dictionary):
     userInput = input('Enter state name').capitalize()
     result = dictionary.get(userInput)
     if result == None:
