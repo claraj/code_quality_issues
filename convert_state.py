@@ -8,7 +8,6 @@ def main():
     print(abbreviation_dict)
     
     # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
-    stateAbbr = abbreviation_dict #dictionary of state abbreviations keys and state name values 
     stateAbbr2 = {}# dictionary of state name keys and state abbreviation values
     # state key is the key in the state dictionary. state value is the value in the dictionary 
     for statekey, statevalue in stateAbbr.items() :
