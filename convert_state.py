@@ -1,13 +1,14 @@
 import json  # import json for json processing
 def main():
-    with open('data.json','r') as file:
-        data = file.read()
+    with open('state_data.json','r') as file:
+        state_data = file.read()
         state_abbr_json = json.loads(state_data)
 
     print(state_abbr_json)
     
     # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
-    state_abbr_to_longform = state_abbr_json # dictionary of state abbreviations keys and state name values 
+    # dictionary of state abbreviations keys and state name values
+    state_abbr_to_longform = state_abbr_json  
     state_longform_to_abbr = {} # dictionary of state name keys and state abbreviation values
     # state key is the key in the state dictionary. state value is the value in the dictionary 
     for statekey, statevalue in state_abbr_to_longform.items() :
@@ -17,8 +18,8 @@ def main():
 
     #loop
     while True:
-        print('1. Convert state to abbreviation')
-        print('2. Convery abreviasion to state')
+        print('1. Convert state to abbreviation ')
+        print('2. Convery abreviasion to state ')
         print('3. Quit')
         choice =   input('Enter choice : ')
 
@@ -34,20 +35,21 @@ def main():
         else:
             print('try again')
             
-def convertStateToAbbreviation(dictionary ):
-    userInput = input("Enter state name").capitalize()
-    result = dictionary.get(userInput)
+def convertStateToAbbreviation(dictionary):
+    user_input = input('Enter state name ').capitalize()
+    result = dictionary.get(user_input)
     if result == None:
         print('state not found')
     else:
-        print ( 'The abbreviation for ' +  userInput + ' is ' + result)
+        print ('The abbreviation for ' +  user_input + ' is ' + result)
+
 def convert_abbreviation_to_state(dictionary):
-    userInput = input("Enter abbrviation name").upper()
-    result = dictionary.get(userInput)
-    if result == None:
+    user_input = input('Enter abbrviation name ').upper()
+    result = dictionary.get(user_input)
+    if result is None:
         print('abreviation not found')
     else:
-        print("the state with the abbreviation " + userInput + " is " + result)
+        print("the state with the abbreviation " + user_input + " is " + result)
 
 
 
