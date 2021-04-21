@@ -1,7 +1,7 @@
-
-
-
 import json  # import json for json processing
+
+
+
 def main():
     with open('data.json','r') as file:
         data = file.read()
@@ -15,8 +15,6 @@ def main():
     # state key is the key in the state dictionary. state value is the value in the dictionary 
     for statekey, statevalue in stateAbbr.items() :
         stateAbbr2[statevalue] =  statekey
-
-
 
     #loop
     while True:
@@ -36,6 +34,8 @@ def main():
             break
         else:
             print('try again')
+
+
 def convertStateToAbbreviation(dictionary ):
     userInput   = input("Enter state name").  capitalize()
     result = dictionary.get(userInput  )
@@ -43,6 +43,8 @@ def convertStateToAbbreviation(dictionary ):
         print(' state not found')
     else:
         print ( "The abbreviation for " +  userInput+" is " + result)
+
+
 def convert_abbreviation_to_state(dictionary):
     userInput   = input("Enter abbrviation name").upper()
     result = dictionary.get(userInput)
@@ -50,8 +52,6 @@ def convert_abbreviation_to_state(dictionary):
         print(' abreviation not found')
     else:
         print("the state with the abbreviation   " + userInput + " is " + result)
-
-
 
 
 
