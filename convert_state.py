@@ -28,7 +28,7 @@ def main():
         if choice == '1':
             convert_state_to_abbreviation(state_name_dict)
 
-        elif  choice == '2':
+        elif choice == '2':
             convert_abbreviation_to_state(state_abbr_dict)
          
         elif choice ==  '3':
@@ -39,9 +39,7 @@ def main():
 
 
 def convert_state_to_abbreviation(dictionary):
-    """
-    Convert state to abbreviation
-    """
+    """ Convert state to abbreviation  """
     user_input = input('Enter state name ').capitalize()   # User inputs state name
     result = dictionary.get(user_input)
 
@@ -53,7 +51,7 @@ def convert_state_to_abbreviation(dictionary):
 
 
 def convert_abbreviation_to_state(dictionary):
-    """Convert abbreviation to state"""
+    """ Convert abbreviation to state """
     user_input = input('Enter abbreviation name').upper() # User inputs abbreviation
     result = dictionary.get(user_input)
 
