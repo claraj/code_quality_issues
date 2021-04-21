@@ -2,6 +2,7 @@
 import json
 
 def main():
+    """ Allow user to get conversion from dictionary """
     with open('data.json','r') as file:
         data = file.read()
         data = json.loads(data)
@@ -9,11 +10,11 @@ def main():
     # print(data)
     
     # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
-    state_Abbr = data # dictionary of state abbreviations keys and state name values 
-    state_Abbr2 = {} # dictionary of state name keys and state abbreviation values
+    state_abbr = data # dictionary of state abbreviations keys and state name values 
+    state_abbr2 = {} # dictionary of state name keys and state abbreviation values
     # state key is the key in the state dictionary. state value is the value in the dictionary 
-    for statekey, statevalue in state_Abbr.items() :
-        state_Abbr2[statevalue] =  statekey
+    for statekey, statevalue in state_abbr.items() :
+        state_abbr2[statevalue] =  statekey
 
     while True:
         print('1. Convert state to abbreviation')
@@ -22,16 +23,17 @@ def main():
         choice = input('Enter choice: ')
 
         if choice=='1':
-            convert_state_to_abbreviation(state_Abbr2)
+            convert_state_to_abbreviation(state_abbr2)
         elif  choice == '2':
-            convert_abbreviation_to_state(state_Abbr)
+            convert_abbreviation_to_state(state_abbr)
         elif choice==  '3':
             break
         else:
             print('try again')
 
 def convert_state_to_abbreviation(dictionary):
-    """ Allow user to get conversion from dictionary """
+    """ Create a dictionary of states -> abbreviations, and a dictionary of 
+    abbreviations -> states """
     user_input = input('Enter state name').capitalize()
     result = dictionary.get(user_input)
     if result is None:
@@ -40,7 +42,7 @@ def convert_state_to_abbreviation(dictionary):
         print ('The abbreviation for' +  user_input + ' is ' + result)
 
 def convert_abbreviation_to_state(dictionary):
-    """ Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states """
+    """Convert user selected abbreviation to state"""
     user_input = input('Enter abbreviation name').upper()
     result = dictionary.get(user_input)
     if result is None:
