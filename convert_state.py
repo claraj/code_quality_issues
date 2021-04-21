@@ -5,6 +5,7 @@ import json  # import json for processing
 
 
 def main():
+    """ Main method """
     with open('data.json','r') as file:
         json_data = file.read()
         json_data = json.loads(json_data)
