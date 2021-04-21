@@ -1,3 +1,7 @@
+"""
+CLI program convert state names to abbreviations and vice versa
+"""
+
 import json
 
 
