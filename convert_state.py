@@ -19,17 +19,16 @@ def main():
     while True:
         print('1: Convert a state to an abbreviation')
         print('2: Convert an abbreviation to a state')
-        print('3: Press 3 to quit')
+        print('Press any other number to quit')
         choice = input('Enter choice: ')
 
         if choice == '1':
             convert_state_to_abbreviation(state_dictionary)
         elif choice == '2':
             convert_abbreviation_to_state(state_name_keys)
-        elif choice == '3':
-            break
         else:
-            print('try again')
+            break
+
 
 def convert_state_to_abbreviation(state_dictionary):
     """
