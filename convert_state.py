@@ -3,13 +3,13 @@ import json  # import json for json processing
 def main():
     with open('data.json','r') as file:
         data = file.read()
-        stateData = json.loads(data)
+        state_data = json.loads(data)
 
-    stateKeyandName = stateData 
-    stateKeyandAbbrev = {}
+    state_key_and_name = state_data 
+    state_key_and_abbrev = {}
 
-    for statekey, statevalue in stateKeyandName.items() :
-        stateKeyandAbbrev[statevalue] = statekey
+    for statekey, statevalue in state_key_and_name.items() :
+        state_key_and_abbrev[statevalue] = statekey
 
     while True:
         print('1. Convert state to abbreviation')
@@ -18,31 +18,31 @@ def main():
         choice = input("Enter choice:")
 
         if choice=="1":
-            convert_state_to_abbreviation(stateKeyandAbbrev)
+            convert_state_to_abbreviation(state_key_and_abbrev)
         elif  choice=="2":
-            convert_abbreviation_to_state(stateKeyandName)
+            convert_abbreviation_to_state(state_key_and_name)
         elif choice=="3":
             break
         else:
             print('Try Again')
 
 def convert_state_to_abbreviation(dictionary ):
-    userInput = input("Enter state name:").capitalize()
-    result = dictionary.get(userInput)
+    user_input = input("Enter state name:").capitalize()
+    result = dictionary.get(user_input)
 
     if result == None:
         print('State Not found')
     else:
-        print ( "The abbreviation for " + userInput + " is " + result + ".")
+        print ( "The abbreviation for " + user_input + " is " + result + ".")
 
 def convert_abbreviation_to_state(dictionary):
 
-    userInput = input("Enter abbrviation name:").upper()
-    result = dictionary.get(userInput)
+    user_input = input("Enter abbrviation name:").upper()
+    result = dictionary.get(user_input)
     if result == None:
         print('Abreviation not found.')
     else:
-        print("The state with the abbreviation." + userInput + " is " + result)
+        print("The state with the abbreviation." + user_input + " is " + result)
 
 if __name__ == "__main__":
 
