@@ -34,7 +34,8 @@ def main():
             print('try again')
 
 
-def convert_state_to_abbreviation(dictionary ):
+def convert_state_to_abbreviation(dictionary):
+    """Function to get state name and give abbreviation"""
     user_input = input('Enter state name: ').  capitalize()
     result = dictionary.get(user_input)
     if result is None:
@@ -44,6 +45,7 @@ def convert_state_to_abbreviation(dictionary ):
 
 
 def convert_abbreviation_to_state(dictionary):
+    """Function to take abbreviaton name and return a state name"""
     user_input = input('Enter abbreviation name: ').upper()
     result = dictionary.get(user_input)
 
