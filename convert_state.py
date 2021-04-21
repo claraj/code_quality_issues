@@ -10,7 +10,7 @@ def main():
     
     state_names = {}
     # State key is the key in the state dictionary. State value is the value in the dictionary.
-    for abbreviation, name in state_abbreviations.items() :
+    for abbreviation, name in state_abbreviations.items():
         state_names[name] = abbreviation
 
     while True:
