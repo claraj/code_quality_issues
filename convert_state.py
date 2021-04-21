@@ -1,4 +1,6 @@
+""" This program converts between US state names, and abbreviations"""
 import json  # import json for json processing
+
 
 
 
@@ -17,7 +19,7 @@ def main():
     for state_key, state_value in state_abbr.items() :
         state_dictionary[state_value] =  state_key
       
-    #loop tht displays menu everytime 
+    # loop that displays menu everytime 
     
     while True:
         print('1. Convert state to abbreviation')
@@ -39,20 +41,23 @@ def main():
 
 
 
-def convert_state_to_abbreviation(dictionary ):
+def convert_state_to_abbreviation(dictionary):
+    """ Create a dictionary of states -> abbreviations, and a dictionary of 
+    abbreviations -> states """
     user_input = input('Enter state name').capitalize()
     result = dictionary.get(user_input)
-    if result == None:
+    if result is None:
         print('State not found')
     else:
         print ('The abbreviation for' + user_input + 'is' + result)
 
 
 def convert_abbreviation_to_state(dictionary):
+    """ Convert abbreviation to state """
     user_input = input('Enter abbreviation name').upper()
     result = dictionary.get(user_input)
     
-    if result == None:
+    if result is None:
         print('Abbreviation not found')
     else:
         print('The state with the abbreviation' + user_input + 'is' + result)
