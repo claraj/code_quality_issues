@@ -38,7 +38,7 @@ def main():
 
         else:
 
-            print('Invalid entry.')
+            print("Invalid entry.")
   
 
 def convert_state_to_abvr(states):
@@ -64,7 +64,7 @@ def convert_abvr_to_state(state_abvrs):
     if state:
         print(f"The state with the abbreviation  {abvr_name} is {state}")
     else:
-        print('Abbreviation not found.')
+        print("Abbreviation not found.")
         
 
 def read_file(states_file):
