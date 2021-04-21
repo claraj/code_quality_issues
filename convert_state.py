@@ -12,12 +12,12 @@ def main():
 
     # State key is the key in the state dictionary. State value is the value in the dictionary 
     for statekey, statevalue in state_abbr_dict.items() :
-        state_name_dict[statevalue] =  statekey
+        state_name_dict[statevalue] = statekey
 
     # This is the main menu
     while True:
         print('1. Convert state to abbreviation ')
-        print('2. Convert abbreviasion to state ')
+        print('2. Convert abbreviation to state ')
         print('3. Quit ')
 
         choice = input('Enter choice: ')
