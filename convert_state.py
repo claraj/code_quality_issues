@@ -31,7 +31,7 @@ def main():
 
             convert_abbreviation_to_state(abbreviation_to_states)
         
-        elif choice ==  "3":
+        elif choice == "3":
 
             print("Good Bye.")
             break
@@ -59,7 +59,7 @@ def convert_abbreviation_to_state(state_abbreviations):
     Takes a state code and converts it to a state name
 
     """
-    abbreviation_name   = input("Enter abbreviation name: ").upper()
+    abbreviation_name = input("Enter abbreviation name: ").upper()
     state = state_abbreviations.get(abbreviation_name)
     if state:
         print(f"The state with the abbreviation {abbreviation_name} is {state}")
