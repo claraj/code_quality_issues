@@ -14,10 +14,10 @@ def main():
     states_file = "states.json"
 
     # dictionary of state codes with corresponding state names
-    abrvs_to_states = read_file(states_file)
+    abbreviation_to_states = read_file(states_file)
 
     # dictionary of states with corresponding state codes
-    states_to_abrvs = reverse_dict(abrvs_to_states)  
+    states_to_abbreviation = reverse_dict(abbreviation_to_states)  
 
     while True:
 
@@ -25,13 +25,13 @@ def main():
 
         if choice == "1":
 
-            convert_state_to_abvr(states_to_abrvs)
+            convert_state_to_abbreviation(states_to_abbreviation)
 
         elif  choice == "2":
 
-            convert_abvr_to_state(abrvs_to_states)
+            convert_abbreviation_to_state(abbreviation_to_states)
         
-        elif choice==  "3":
+        elif choice ==  "3":
 
             print("Good Bye.")
             break
@@ -41,28 +41,28 @@ def main():
             print('Invalid entry.')
   
 
-def convert_state_to_abvr(states):
+def convert_state_to_abbreviation(states):
     """
     Takes a state name and converts it to a state code
 
     """
     state = input("Enter state name: ").capitalize()
-    abrv_name = states.get(state)
-    if abrv_name:
-        print (f"The abbreviation for {state} is {abrv_name}")
+    abbreviation_name = states.get(state)
+    if abbreviation_name:
+        print (f"The abbreviation for {state} is {abbreviation_name}")
     else:
         print("State not found.")
 
 
-def convert_abvr_to_state(state_abvrs):
+def convert_abbreviation_to_state(state_abbreviations):
     """
     Takes a state code and converts it to a state name
 
     """
-    abvr_name   = input("Enter abbreviation name: ").upper()
-    state = state_abvrs.get(abvr_name)
+    abbreviation_name   = input("Enter abbreviation name: ").upper()
+    state = state_abbreviations.get(abbreviation_name)
     if state:
-        print(f"The state with the abbreviation  {abvr_name} is {state}")
+        print(f"The state with the abbreviation {abbreviation_name} is {state}")
     else:
         print('Abbreviation not found.')
         
@@ -74,8 +74,8 @@ def read_file(states_file):
     """
     with open(states_file,"r") as file:
         states = file.read()
-        abrvs_to_states = json.loads(states) 
-    return abrvs_to_states
+        abbreviation_to_states = json.loads(states) 
+    return abbreviation_to_states
 
 
 def reverse_dict(initial_dict):
@@ -100,12 +100,10 @@ def show_menu_get_choice():
     print("2. Convery abbreviation to state")
     print("3. Quit")
 
-    choice =   input("Enter the integer value of your choice: ")
+    choice = input("Enter the integer value of your choice: ")
 
     return choice
 
-
         
 if __name__ == "__main__":
-
     main()
