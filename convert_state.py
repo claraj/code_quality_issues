@@ -11,10 +11,10 @@ def main():
     '''
     with open('data.json','r') as file:
         states = file.read()
-        states = json.loads(states)
+        abbreviation_to_name = json.loads(states)
 
     # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
-    state_abbr = states    #dictionary of state abbreviations keys and state name values 
+    state_abbr = abbreviation_to_name    #dictionary of state abbreviations keys and state name values 
     state = {}     # dictionary of state name keys and state abbreviation values
     
     # state key is the key in the state dictionary. state value is the value in the dictionary 
