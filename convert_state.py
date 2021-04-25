@@ -1,24 +1,23 @@
-'''
+"""
 This program converts between US state names, and abbreviations. 
 For example, converting "MN" to "Minnesota" or converting "California" to "CA".
-'''
+"""
 import json
 
 
 def main():
-    '''
+    """
     reads the states js and stores them as dictionary
-    '''
+    """
     with open('data.json','r') as file:
         states = file.read()
         abbreviation_to_name = json.loads(states)
 
     # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
-    state_abbr = abbreviation_to_name    #dictionary of state abbreviations keys and state name values 
     state = {}     # dictionary of state name keys and state abbreviation values
     
     # state key is the key in the state dictionary. state value is the value in the dictionary 
-    for state_key, state_value in state_abbr.items():
+    for state_key, state_value in abbreviation_to_name.items():
         state[state_value] = state_key
 
     while True:
@@ -32,7 +31,7 @@ def main():
             convert_state_to_abbreviation(state)
 
         elif  choice=='2':
-            convert_abbreviation_to_state(state_abbr)
+            convert_abbreviation_to_state(abbreviation_to_name)
          
         elif choice=='3':
             break
@@ -42,9 +41,9 @@ def main():
 
 
 def convert_state_to_abbreviation(dictionary):
-    '''
+    """
     converts state name to abbreviation
-    '''
+    """
     user_input=input("Enter state name: ").capitalize()
     result = dictionary.get(user_input)
 
@@ -52,13 +51,13 @@ def convert_state_to_abbreviation(dictionary):
         print('state not found')
 
     else:
-        print ('The abbreviation for ' + user_input + ' is ' + result)
+        print (f'The abbreviation for {user_input} is {result}')
 
 
 def convert_abbreviation_to_state(dictionary):
-    '''
+    """
     converts abbreviation to state name
-    '''
+    """
     user_input = input("Enter abbreviation name: ").upper()
     result = dictionary.get(user_input)
 
@@ -66,7 +65,7 @@ def convert_abbreviation_to_state(dictionary):
         print('abbreviation not found')
 
     else:
-        print('the state with the abbreviation ' + user_input + ' is ' + result)
+        print(f'the state with the abbreviation {user_input} is {result}')
 
 
 if __name__ == "__main__":
