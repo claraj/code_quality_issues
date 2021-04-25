@@ -29,7 +29,7 @@ def main():
             print('try again')
 
 def convert_state_to_abbreviation(dictionary ):
-    user_Input = input('Enter state name').  capitalize()
+    user_input = input('Enter state name').  capitalize()
     result = dictionary.get(userInput)
     if result is None:
         print('state not found')
@@ -37,7 +37,7 @@ def convert_state_to_abbreviation(dictionary ):
         print ('The abbreviation for ' +  user_input+ ' is ' + result)
 def convert_abbreviation_to_state(dictionary):
     user_input   = input('Enter abbrviation name').upper()
-    result = dictionary.get(user_Input)
+    result = dictionary.get(user_input)
     if result is None:
         print('abreviation not found')
     else:
