@@ -10,10 +10,10 @@ def main():
     Read data from JSON file to start main method
     """
     with open('data.json','r') as file:
-        data = file.read()
-        data = json.loads(data)
+        read_state_abbreviations = file.read()
+        state_abbreviations = json.loads(read_state_abbreviations) #dictionary of state abbreviations keys and state name values 
     
-    state_abbreviations = data #dictionary of state abbreviations keys and state name values 
+     
     state_names = {} # dictionary of state name keys and state abbreviation values
 
     # state key is the key in the state dictionary. state value is the value in the dictionary 
