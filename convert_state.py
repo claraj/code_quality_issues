@@ -1,8 +1,8 @@
 
 
 
-import json  # import json for json processing
-def main():
+import json  # use an import statement to import json for json processing
+def main(): # make a main function
     with open('data.json','r') as file:
         data = file.read()
         data = json.loads(data)
@@ -20,9 +20,9 @@ def main():
 
     #loop
     while True:
-        print('1. Convert state to abbreviation')
-        print("2. Convery abreviasion to state")
-        print(' 3. quit')
+        print('1. Convert state to abbreviation')  # print a choice
+        print("2. Convery abreviasion to state")   # print a choice
+        print(' 3. quit')  # print a choice
         choice =   input("Enter choice : ")
 
         if choice=="1":
@@ -47,7 +47,7 @@ def convert_abbreviation_to_state(dictionary):
     userInput   = input("Enter abbrviation name").upper()
     result = dictionary.get(userInput)
     if result == None:
-        print(' abreviation not found')
+        print('error')
     else:
         print("the state with the abbreviation   " + userInput + " is " + result)
 
