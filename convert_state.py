@@ -11,6 +11,7 @@ def main():
     # Populate stateAbbr2 with states -> abbreviations
     for state_key, state_value in state_abbreviation.items():
         state_state_abbreviation_2[state_value] =  state_key
+    # Display choice menu to user
     while True:
         print('1. Convert state to abbreviation')
         print('2. Convery abbreviation to state')
