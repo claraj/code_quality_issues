@@ -5,8 +5,6 @@ def main():
     with open('code_quality_issues/data.json','r') as file:
         data = file.read()
         json_data = json.loads(data)
-    print(data)
-
     state_abbreviation = json_data # Create a dictionary of abbreviations -> states
     state_state_abbreviation_2 = {} # Initiate a new dictionary to hold states -> abbreviations
     # Populate stateAbbr2 with states -> abbreviations
