@@ -24,8 +24,7 @@ def main():
         elif choice == '3':
             break
         else:
-            print('Try again')
-            print('\n')
+            print('Try again' + '\n')
 
 
 def convert_state_to_abbreviation(dictionary):
