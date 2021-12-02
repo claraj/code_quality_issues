@@ -17,34 +17,34 @@ def main():
         print('1. Convert state to abbreviation')
         print('2. Convery abreviasion to state')
         print('3. Quit')
-        choice =   input('Enter choice: ')
+        choice = input('Enter choice: ')
 
-        if choice=='1':
+        if choice == '1':
             convertStateToAbbreviation(stateAbbr2)
-        elif  choice == '2':
+        elif choice == '2':
             convert_abbreviation_to_state(stateAbbr)
-        elif choice==  '3':
+        elif choice == '3':
             break
         else:
             print('Try again')
 
 
 def convertStateToAbbreviation(dictionary ):
-    userInput   = input('Enter state name').  capitalize()
+    userInput = input('Enter state name: ').  capitalize()
     result = dictionary.get(userInput  )
     if result == None:
         print('State not found')
     else:
-        print ('The abbreviation for ' +  userInput+' is ' + result)
+        print('The abbreviation for ' +  userInput+' is ' + result)
 
 
 def convert_abbreviation_to_state(dictionary):
-    userInput   = input('Enter abbrviation name').upper()
+    userInput = input('Enter abbrviation name: ').upper()
     result = dictionary.get(userInput)
     if result == None:
         print('Error')
     else:
-        print('The state with the abbreviation   ' + userInput + ' is ' + result)
+        print('The state with the abbreviation ' + userInput + ' is ' + result)
 
 
 if __name__ == '__main__':
