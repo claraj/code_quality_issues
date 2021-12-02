@@ -29,9 +29,9 @@ def main():
             print('Try again')
 
 
-def convertStateToAbbreviation(dictionary ):
+def convertStateToAbbreviation(dictionary):
     userInput = input('Enter state name: ').  capitalize()
-    result = dictionary.get(userInput  )
+    result = dictionary.get(userInput)
     if result == None:
         print('State not found')
     else:
