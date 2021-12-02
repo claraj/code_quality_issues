@@ -2,7 +2,7 @@ import json
 
 
 def main():
-    with open('code_quality_issues/data.json','r') as file:
+    with open('data.json','r') as file:
         state_data = file.read()
         json_state_data = json.loads(state_data)
     state_abbreviation = json_state_data # Create a dictionary of abbreviations -> states
@@ -24,6 +24,7 @@ def main():
             break
         else:
             print('Try again')
+            print('\n')
 
 
 def convert_state_to_abbreviation(dictionary):
@@ -31,8 +32,9 @@ def convert_state_to_abbreviation(dictionary):
     result = dictionary.get(user_input)
     if result == None:
         print('State not found')
+        print('\n')
     else:
-        print('The abbreviation for ' + user_input + ' is ' + result)
+        print('The abbreviation for ' + user_input + ' is ' + result + '\n')
 
 
 def convert_abbreviation_to_state(dictionary):
@@ -40,8 +42,9 @@ def convert_abbreviation_to_state(dictionary):
     result = dictionary.get(user_input)
     if result == None:
         print('Error')
+        print('\n')
     else:
-        print('The state with the abbreviation ' + user_input + ' is ' + result)
+        print('The state with the abbreviation ' + user_input + ' is ' + result + '\n')
 
 
 if __name__ == '__main__':
