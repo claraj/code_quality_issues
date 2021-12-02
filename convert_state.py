@@ -1,60 +1,50 @@
+import json
 
 
+def main():
+    with open('data.json' , 'r') as file:
+        state_data = file.read()
+        json_state_data = json.loads(state_data)
+    state_abbreviation = json_state_data # Create a dictionary of abbreviations -> states
+    state_state_abbreviation_2 = {} # Initiate a new dictionary to hold states -> abbreviations
 
-import json  # use an import statement to import json for json processing
-def main(): # make a main function
-    with open('data.json','r') as file:
-        data = file.read()
-        data = json.loads(data)
-
-    print(data)
-    
-    # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
-    stateAbbr = data #dictionary of state abbreviations keys and state name values 
-    stateAbbr2 = {}# dictionary of state name keys and state abbreviation values
-    # state key is the key in the state dictionary. state value is the value in the dictionary 
-    for statekey, statevalue in stateAbbr.items() :
-        stateAbbr2[statevalue] =  statekey
-
-
-
-    #loop
+    # Populate stateAbbr2 with states -> abbreviations
+    for state_key, state_value in state_abbreviation.items():
+        state_state_abbreviation_2[state_value] =  state_key
+    # Display choice menu to user
     while True:
-        print('1. Convert state to abbreviation')  # print a choice
-        print("2. Convery abreviasion to state")   # print a choice
-        print(' 3. quit')  # print a choice
-        choice =   input("Enter choice : ")
-
-        if choice=="1":
-
-            convertStateToAbbreviation(stateAbbr2)
-        elif  choice == "2":
-            convert_abbreviation_to_state(stateAbbr)
-        
-        
-        elif choice==  "3":
+        print('1. Convert state to abbreviation')
+        print('2. Convery abbreviation to state')
+        print('3. Quit')
+        choice = input('Enter choice: ')
+        if choice == '1':
+            convert_state_to_abbreviation(state_state_abbreviation_2)
+        elif choice == '2':
+            convert_abbreviation_to_state(state_abbreviation)
+        elif choice == '3':
             break
         else:
-            print('try again')
-def convertStateToAbbreviation(dictionary ):
-    userInput   = input("Enter state name").  capitalize()
-    result = dictionary.get(userInput  )
+            print('Try again' + '\n')
+
+
+def convert_state_to_abbreviation(state_dictionary):
+    user_input = input('Enter state name: ').capitalize()
+    result = state_dictionary.get(user_input)
     if result == None:
-        print(' state not found')
+        print('State not found' + '\n')
     else:
-        print ( "The abbreviation for " +  userInput+" is " + result)
-def convert_abbreviation_to_state(dictionary):
-    userInput   = input("Enter abbrviation name").upper()
-    result = dictionary.get(userInput)
+        print('The abbreviation for ' + user_input + ' is ' + result + '\n')
+
+
+def convert_abbreviation_to_state(abbreviation_dictionary):
+    user_input = input('Enter abbreviation name: ').upper()
+    result = abbreviation_dictionary.get(user_input)
     if result == None:
-        print('error')
+        print('Error')
+        print('\n')
     else:
-        print("the state with the abbreviation   " + userInput + " is " + result)
+        print('The state with the abbreviation ' + user_input + ' is ' + result + '\n')
 
 
-
-
-
-if __name__ == "__main__":
-
+if __name__ == '__main__':
     main()
