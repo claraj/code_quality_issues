@@ -7,13 +7,12 @@ def main():
         data = json.loads(data)
     print(data)
 
-    # Create a dictionary of states -> abbreviations, and a dictionary of abbreviations -> states 
-    stateAbbr = data
-    stateAbbr2 = {}
-
-    # state key is the key in the state dictionary. state value is the value in the dictionary 
+    stateAbbr = data # Create a dictionary of abbreviations -> states
+    stateAbbr2 = {} # Initiate a new dictionary to hold states -> abbreviations
+    # Populate stateAbbr2 with states -> abbreviations
     for statekey, statevalue in stateAbbr.items() :
         stateAbbr2[statevalue] =  statekey
+
     while True:
         print('1. Convert state to abbreviation')
         print('2. Convery abreviasion to state')
