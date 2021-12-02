@@ -2,6 +2,7 @@ import json
 
 
 def main():
+
     with open('code_quality_issues/data.json','r') as file:
         data = file.read()
         data = json.loads(data)
@@ -12,7 +13,6 @@ def main():
     # Populate stateAbbr2 with states -> abbreviations
     for statekey, statevalue in stateAbbr.items() :
         stateAbbr2[statevalue] =  statekey
-
     while True:
         print('1. Convert state to abbreviation')
         print('2. Convery abreviasion to state')
@@ -20,7 +20,7 @@ def main():
         choice = input('Enter choice: ')
 
         if choice == '1':
-            convertStateToAbbreviation(stateAbbr2)
+            convert_state_to_abbreviation(stateAbbr2)
         elif choice == '2':
             convert_abbreviation_to_state(stateAbbr)
         elif choice == '3':
@@ -29,7 +29,8 @@ def main():
             print('Try again')
 
 
-def convertStateToAbbreviation(dictionary):
+def convert_state_to_abbreviation(dictionary):
+
     userInput = input('Enter state name: ').capitalize()
     result = dictionary.get(userInput)
     if result == None:
@@ -39,6 +40,7 @@ def convertStateToAbbreviation(dictionary):
 
 
 def convert_abbreviation_to_state(dictionary):
+
     userInput = input('Enter abbrviation name: ').upper()
     result = dictionary.get(userInput)
     if result == None:
