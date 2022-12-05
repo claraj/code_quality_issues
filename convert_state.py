@@ -6,11 +6,11 @@ def main():
         data = file.read()
         data = json.loads(data)
     
-    state_abbr = data  # dictionary of state abbreviations keys and state name values 
-    state_abbr_2 = {}  # state_abbr dictionary with reversed keys & values
+    abbr_to_state = data  # dictionary - key: state abbreviations, value: state name 
+    state_to_abbr = {}  # key: state name, value: abbreviation
 
-    for statekey, statevalue in state_abbr.items():
-        state_abbr_2[statevalue] =  statekey
+    for statekey, statevalue in abbr_to_state.items():
+        state_to_abbr[statevalue] =  statekey
 
     while True:
         print('1. Convert state to abbreviation')
@@ -19,9 +19,9 @@ def main():
         choice = input('Enter choice: ')
 
         if choice== '1':
-            convert_state_to_abbreviation(state_abbr_2)
+            convert_state_to_abbreviation(state_to_abbr)
         elif  choice == '2':
-            convert_abbreviation_to_state(state_abbr)
+            convert_abbreviation_to_state(abbr_to_state)
         elif choice ==  '3':
             break
         else:
